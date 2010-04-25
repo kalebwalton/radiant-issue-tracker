@@ -1,0 +1,19 @@
+%h1 Issues
+%p
+  = link_to "Request New Feature or Report Bug", new_admin_issue_url
+
+%table#issues.index{:cellspacing=>"0", :border=>"0", :cellpadding=>"0"}
+  %thead
+    %tr
+      %th.title Title
+      %th.title Type
+      %th.date Date
+  %tbody
+    - @issues.each do |issue|
+      %tr.node.level-1
+        %td.title
+          = link_to issue.title, admin_issue_url(issue.number)
+        %td.type
+          = (!issue.labels.nil? && !issue.labels.empty? ? issue.labels[0] : "N/A")
+        %td.date
+          = issue.created_at.strftime("%B %d, %Y")

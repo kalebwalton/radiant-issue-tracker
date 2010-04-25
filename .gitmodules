@@ -1,0 +1,3 @@
+[submodule "vendor/octopi"]
+	path = vendor/octopi
+	url = git@github.com:kalebwalton/octopi.git

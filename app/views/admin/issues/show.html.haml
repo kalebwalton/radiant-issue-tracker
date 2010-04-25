@@ -1,0 +1,8 @@
+%h1 Issue Details
+
+%h3
+  = (!@issue.labels.nil? && !@issue.labels.empty? ? @issue.labels[0].upcase : "N/A")+": "+@issue.title
+%p
+  = @issue.body.gsub(/\n^\[.*\]$/,"")
+
+= link_to 'Back to Issue List', admin_issues_url
